@@ -5,3 +5,12 @@ node.js is a software which we use to run js code (as we have different software
 lec_3:
 setup a codespace on github (online vscode setup along with online node.js)
 devcontainer.json -- a configuration file which holds the info of the apps we have installed online through add dev container option
+
+lec_4:
+let, const & var
+diff b/w these 3 types, limitation of 'var' (block scope) overcame by 'let'. 
+'const' variables can't be changed.
+
+lec_5:
+different datatypes like number, string, boolean, etc.
+typeof is a special keyword to know the datatype of variables
