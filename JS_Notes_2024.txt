@@ -1,0 +1,7 @@
+lec_2:
+download and setup node.js and vscode (offline setup)
+node.js is a software which we use to run js code (as we have different softwares to run our python or cpp code) outside of the browser or console. we simply get the o/p of our standalone js file in the terminal, we don't need any html file to run our js file as we do in our browser.
+
+lec_3:
+setup a codespace on github (online vscode setup along with online node.js)
+devcontainer.json -- a configuration file which holds the info of the apps we have installed online through add dev container option
