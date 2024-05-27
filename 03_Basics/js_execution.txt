@@ -1,0 +1,11 @@
+// how does js execute code + call stack
+
+step 1 : Global execution context ('this' keyword ke andr pura code aa jata hai)
+
+step 2 : memory phase (jitna bhi variables hai, sb memory me store ho jata hai with value = 'undefined'. func agr kch defined hai to wo define hota hai, as such value kch nhi hoga, defined bol skte hai)
+
+step 3 : execution phase (code starts executing. jo bhi variables memory me hai, wo sb ke andr values store hota hai. func agr kch hoga then it will create it's own memory phase + execution phase in a new environment. is environment me same main environment jaise hoga sbkch, and after everything is done it get's deleted. also, agr kch return ho rha hoga is func se then it will get returned to the global context).
+
+// bs itna hi hai, baki isko dekhna ho to can be seen through the snippet in chrome dev tools!
+
+// call stack -- jo bhi func hoga, when they will be called they will be pushed into a stack in the order (LIFO). baki aur kch nhi hai!!
