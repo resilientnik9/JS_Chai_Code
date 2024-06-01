@@ -14,3 +14,9 @@ diff b/w these 3 types, limitation of 'var' (block scope) overcame by 'let'.
 lec_5:
 different datatypes like number, string, boolean, etc.
 typeof is a special keyword to know the datatype of variables
+
+**koi bhi cheez ka prototype me jo bhi methods define hoga, apan wo sb use kr skte hai, agr prototype me nhi hai, then we can use it!!**
+eg. array, nodelist, htmlcollection are not same.
+nodelist, htmlcollection me we have very limited no. of prototypes as compared to array!!
+
+// we can though covert the htmlcollection or nodelist to an array directly using the "Array.from(nodelist / htmlcollection)" //
