@@ -20,3 +20,7 @@ eg. array, nodelist, htmlcollection are not same.
 nodelist, htmlcollection me we have very limited no. of prototypes as compared to array!!
 
 // we can though covert the htmlcollection or nodelist to an array directly using the "Array.from(nodelist / htmlcollection)" //
+
+<!-- <div class="days">Friday</div>
+        <div class="days">Saturday</div>
+        <div class="days">Sunday</div> -->

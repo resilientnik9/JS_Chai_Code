@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg-Color{
+            background-color: black;
+            color : white;
+        }
+    </style>
+</head>
+<body class = bg-Color>
+    <div class = "parent">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thrusday</div>
+    </div>
+</body>
+<script>
+    let parent = document.querySelector(".parent");
+    // console.log(parent.children);
+    let totalChild = parent.childNodes; // A nodelist is a collection of document nodes which includes text nodes , attribute nodes and element nodes. this gives all the child of the parent, including the line break (only 1 line break is counted b/w two child)
+    // console.log(totalChild);
+
+    const div = document.createElement("div");
+    // console.log(div);
+    // div.innerText = "Nikhil Anand"
+    const addText = document.createTextNode("Anand_Nikhil");
+    // console.log(addText);
+    div.appendChild(addText);
+    document.body.appendChild(div);
+    console.log(document.querySelector(".bg-Color").childNodes);
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | Nikhil Anand</title>
+</head>
+<body>
+    <div>
+        <ul id = "language">
+            <li>Javascript</li>
+        </ul>
+    </div>
+</body>
+<script>
+    let ulEle = document.querySelector("#language");
+    // console.log(ulEle);
+    // ulEle.append("li");
+    // console.log(ulEle);
+    // console.log(document.querySelectorAll("li"));
+
+    function addLang (userLang){
+        let createLi = document.createElement("li");
+        // createLi.innerText = userLang;
+        createLi.appendChild(document.createTextNode(userLang)); // more efficient than just changing the text of the created element using innerHTML or innerText. it has to travel the complete tree in these 2 case as compared to the createTextNode(), where we just create a text node, append it as a child to the new created element, and then append the new element as a child to the parent element.
+        ulEle.appendChild(createLi);
+        // console.log(ulEle);
+    };
+    addLang("Java");
+    addLang("Cpp");
+    addLang("Python");
+
+    // // console.log(document.querySelectorAll("li"));
+    let allLang = document.querySelectorAll("li");
+    // console.log(allLang);
+    allLang.forEach(function(val, index){
+        console.log(allLang[index].outerText);
+    })
+
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // console.log(secondLang);
+    const newSecondLang = document.createElement("li");
+    newSecondLang.appendChild(document.createTextNode("C"));
+    secondLang.replaceWith(newSecondLang);
+    newSecondLang.remove();
+    console.log(newSecondLang);
+    // console.log(document.querySelector(".language"));
+
+    // const newLi = document.createElement("li");
+    // const newContent = document.createTextNode("Item 4");
+    // const existingUl = document.getElementById("language");
+    // newLi.appendChild(newContent);
+    // existingUl.appendChild(newLi);
+    // console.log(ulEle);
+
+    // ulEle.remove();
+    // console.log(ulEle);
+</script>
+</html>
