@@ -1,0 +1,1 @@
+console.log('hey this js file is linked to the html');

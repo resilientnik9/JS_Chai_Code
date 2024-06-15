@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://cc-prod.scene7.com/is/image/CCProdAuthor/Photoshop-Ideas_P1_mobile_360x270?$pjpeg$&jpegSize=200&wid=720" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://ik.imagekit.io/tvlk/blog/2018/08/Tokyo-Kyoto-367585043.jpg?tr=dpr-2.625,h-320,q-25,w-320" alt=""></li>
+            <li><img width="200px" id="river" src="https://i.guim.co.uk/img/media/820c085c0e131aeade9095f7fccdb369727c6639/0_344_6000_3600/master/6000.jpg?width=1200&quality=85&auto=format&fit=max&s=e81c8ed7464aa8a0189f840f5b0b6719" alt=""></li>
+            <li><img width="200px" id="owl" src="https://cdn.download.ams.birds.cornell.edu/api/v1/asset/297363481/900" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIPSIS5vXjPxnhHzZdfMihuRWelG6u_Nhk8g&usqp=CAU" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // onlcick -- this doesn't have the propogation feature (an many more features) as compared to "addEventListener"
+
+    // document.getElementById("owl").onclick = function func () {
+    //     console.log("this was triggered on 'onclick' event!!");
+    // }
+    // document.getElementById("owl").onclick = function () {
+    //     console.log("this was triggered on 'onclick' event!!");
+    // }
+
+    // document.getElementById("prayer").addEventListener("click", function(){
+    //     console.log("this was triggered on 'addEventListener'!!");
+    // }, false)
+    
+    // cnc -- chai nd code
+    // these are some of the properties of the event object (event parameter 'e'), inko thoda detail me pdh lena, will help as per cnc!!
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    // document.getElementById("images").addEventListener("click", function(){
+    //     console.log("clicked on an image through 'image Id'");
+    // }, true);
+
+    // document.getElementById("prayer").addEventListener("click", function(e){
+    //     console.log("this was triggered on 'addEventListener'!!");
+    //     // e.stopPropagation();
+    // }, true);
+
+    document.getElementById("images").addEventListener("click", function(e){
+        // console.log("clicked on an image through 'image Id'");
+        // e.stopPropagation();
+        console.log(e.target.parentNode);
+        // e.target.parentNode.remove();
+        // e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+        // e.target.parentNode = li
+        // e.target.parentNode.parentNode = ul
+        // e.target.parentNode.removechild(li)
+    }, false);
+
+    // document.getElementById("google").addEventListener("click", function(e){
+    //     e.preventDefault();
+    //     console.log(e.defaultPrevented);
+    //     e.stopPropagation();
+    // })
+</script>
+</html>
