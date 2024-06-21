@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // returns a unique Id (a unique number). also, this gets fixed, like everytime our component refreshes, it will return the same Id.
+    const uniqueId1 = setTimeout(function(){
+        // console.log("Nikhil_Anand");
+        document.querySelector("h1").textContent = "Js Chai aur Code 1.0!!"
+    }, 3000);
+    console.log(uniqueId1);
+    document.querySelector("#stop").addEventListener("click", function(){
+        clearTimeout(uniqueId1);
+        // console.log(clearTimeout(uniqueId)); // returns undefined
+    });
+    // this is unique, not same as uniqueId1, though same for every refresh
+    const uniqueId2 = setTimeout(function(){
+        document.querySelector("h1").textContent = "Js Chai aur Code 2.0!!"
+    }, 5000);
+    console.log(uniqueId2);
+</script>
+</html>

@@ -65,5 +65,12 @@
     //     console.log(e.defaultPrevented);
     //     e.stopPropagation();
     // })
+
+    console.log(1);
+    // even though we have set the function to execute in 0ms, it still executes after line log(3), coz from the call stack it will call the web api, then go into the queue, then again come back to the call stack.
+    setTimeout(function(){
+        console.log(2);
+    }, 0);
+    console.log(3);
 </script>
 </html>
