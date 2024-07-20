@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: black; color :aliceblue">
+    <p>hey, how are you doing today?</p>
+</body>
+<script>
+    const gitUrl = "https://api.github.com/users/resilientnik9";
+    const apiReq = new XMLHttpRequest();
+    apiReq.open('GET', gitUrl);
+    apiReq.send();
+    // console.log("------15-------" + apiReq.readyState);
+
+    // The readystatechange event is fired whenever the readyState property of the XMLHttpRequest changes.
+    // apiReq.onreadystatechange = function () {
+        // console.log(e);
+        // console.log(apiReq.readyState);
+        const data = JSON.parse(apiReq.responseText);
+        // if(apiReq.readyState === 4){
+            console.log(data.twitter_username);
+        // }
+    // }
+    // apiReq.send();
+    // console.log(apiReq);
+</script>
+</html>
