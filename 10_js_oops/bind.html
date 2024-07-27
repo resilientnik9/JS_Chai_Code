@@ -1,0 +1,31 @@
+<!-- thoda confusing hai to understand how actually we take use of bind, projects krenge to aur pta lgega!!-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Click karo!</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React";
+            this.server = "https://localhost:3000"
+
+            document.querySelector("button").addEventListener("click", this.handleClick.bind(this)); // this is another way to access everything of the "React" class in the handleClick func (we bind everyting using 'this', keeping the reference of who called this handleClick same).
+        }
+
+        handleClick(){
+            console.log("button dabaya!!");
+            console.log(this); // just 'this' will give the reference of the button which clicked it, it won't be able to access the other variables (library, server) defined in the constructor since this func is called on the btn click, hence Q. kisne call kiya? A. button ne, hence btn reference.
+        }
+    }
+
+    const app = new Nikhil();
+    // app.handleClick(); // calling this explicity, we will be able to access the variables of the class, since we are calling the func using an instance of the class. this is one way to access everything in the "React" class defined above.
+
+</script>
+</html>
