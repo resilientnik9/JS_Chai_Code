@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+    <style>
+        #orange{
+            background-color: orange;
+        }
+        #red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body style = "background-color: grey;">
+    <button id = "orange">
+        dabao bhai!
+    </button>
+    <button id = "red">
+        prem btn daba!!
+    </button>
+</body>
+<script>
+    // console.log("hey!!");
+
+    ///// lexical-scoping //////////////
+    // function init() {
+    //     let name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {
+    //         let user = "nik";
+    //         // displayName() is the inner function, that forms the closure
+    //         // console.log(name); // use variable declared in the parent function
+    //     }
+
+    //     function displayUser(){
+    //         console.log(user); // one inner func can't access variables of another inner func to a common outer func
+    //     }
+
+    //     displayName();
+    //     // console.log(user); // variables defined in the inner func are not accessible to the outer func
+    //     displayUser();
+    // }
+    // init();
+    // console.log(name); // we won't be able to access variables defined in a func outside the func
+    // displayName(); we won't be able to call the inner func of a func directly like this
+
+    
+    ////// closure /////////////////
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName; // this will not only return this inner func, rather it will return the entire lexical scoping, i.e. everything that is present in the outer func
+    // }
+
+    // const myFunc = makeFunc(); // basically we got the reference of the inner func "dispalyName" defined inside the outer func "makeFunc"
+    // console.log(myFunc);  // o/p : displayName() { console.log(name);}
+    // myFunc(); // now here we are calling the inner func which will o/p the log defined inside it
+
+    ////// practical use of closure /////////
+    // document.getElementById("orange").onclick = function () {
+    //     document.body.style.backgroundColor = "orange";
+    // }
+    // document.getElementById("red").onclick = function () {
+    //     document.body.style.backgroundColor = "red";
+    // }
+
+    // now we can't write the above code again and again if we have multiple btns. we can write the above code in a func and then call that func.
+
+    function mainFunc(color){
+        function changeColor(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+        return changeColor;
+    }
+
+    // this will directly call the func even if we don't click on any btn, hence changing the color by default since we executed the func "changeColor". instead, we can return the reference of that func to "onClick". this func should be defined inside an outer func "mainFunc"
+    // document.getElementById("orange").onclick = changeColor("orange");
+    // document.getElementById("red").onclick = changeColor("red");
+
+    document.getElementById("orange").onclick = mainFunc("orange");
+    document.getElementById("red").onclick = mainFunc("red");
+
+</script>
+</html>
